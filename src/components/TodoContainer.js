@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "./Header";
 import TodoList from "./TodoList";
 
 class TodoContainer extends React.Component {
@@ -12,18 +13,21 @@ class TodoContainer extends React.Component {
       {
         id: 2,
         title: "Develop website and Add content",
-        completed: true
+        completed: false
       },
       {
         id: 3,
         title: "Deploy to live server",
-        completed: true
+        completed: false
       },
     ]
   }
   render() {
     return (
-      <TodoList todos={this.state.todos}/>
+      <div>
+        <Header/>
+        <TodoList todos={this.state.todos} />
+      </div>
     )
   }
 }
