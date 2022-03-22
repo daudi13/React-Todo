@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Header";
 import TodoList from "./TodoList";
 import InputTodo from "./InputTodo";
-import { v4 as uuidv4 } from "uuid"
+import { v4 as uuidv4 } from "uuid";
 
 class TodoContainer extends React.Component {
   state = {
@@ -62,12 +62,26 @@ class TodoContainer extends React.Component {
     })
   }
 
+  setUpdate = (updateTitle, id)  => {
+    this.setState({
+      todos: this.state.todos.map(todo => {
+        if (todo.id === id) {
+          todo.title = updateTitle
+        }
+
+        return todo
+      }),
+    })
+  } 
+
   render() {
     return (
-      <div>
-        <Header/>
-        <InputTodo addTodoProps={this.addTodoItem}/>
-        <TodoList todos={this.state.todos} handleChangeProps={this.handleChange} checkDel={this.delTodo}/>
+      <div className="container">
+        <div className="inner">
+          <Header/>
+          <InputTodo addTodoProps={this.addTodoItem}/>
+          <TodoList todos={this.state.todos} handleChangeProps={this.handleChange} checkDel={this.delTodo} setUpdate={this.setUpdate}/>
+        </div>
       </div>
     )
   }
