@@ -58,6 +58,12 @@ class TodoContainer extends React.Component {
     })
   } 
 
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/todos")
+      .then(res => res.json())
+    .then(data => console.log(data))
+  }
+
   render() {
     return (
       <div className="container">
