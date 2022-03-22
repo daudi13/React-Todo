@@ -6,23 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 
 class TodoContainer extends React.Component {
   state = {
-    todos: [
-      {
-        id: uuidv4(),
-        title: "SetUp development environment",
-        completed: true
-      },
-      {
-        id: uuidv4(),
-        title: "Develop website and Add content",
-        completed: true
-      },
-      {
-        id: uuidv4(),
-        title: "Deploy to live server",
-        completed: true
-      },
-    ]
+    todos: []
   }
 
   handleChange = (id) => {
