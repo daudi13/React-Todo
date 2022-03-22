@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from './TodoItem.module.css'
 const TodoItems = (props) => {
   const [editing, setEditing] = useState(false);
@@ -13,9 +13,11 @@ const TodoItems = (props) => {
     }
   }
 
-  // componentWillUnmount() {
-  //   console.log("Cleaning up...")
-  // }
+  useEffect(() => {
+    return () => {
+      console.log("cleaning up")
+    }
+  }, [])
 
 
   const completedStyle = {
