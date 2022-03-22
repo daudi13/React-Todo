@@ -16,6 +16,10 @@ class InputTodo extends Component {
     console.log(this.state.title)
   }
 
+  addTodoItem = title => {
+    console.log(title)
+  }
+
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
