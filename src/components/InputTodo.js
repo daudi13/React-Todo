@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class inputTodo extends Component {
+class InputTodo extends Component {
   render() {
     return (
       <form>
@@ -11,4 +11,4 @@ class inputTodo extends Component {
   }
 }
 
-export default inputTodo;
+export default InputTodo;
