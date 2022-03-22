@@ -52,6 +52,16 @@ const TodoContainer = () => {
     )
   } 
 
+  useEffect(() => {
+    console.log("test run")
+    const temp = localStorage.getItem("todos");
+    const loadedTodos = JSON.parse(temp)
+
+    if (loadedTodos) {
+      setTodos(loadedTodos)
+    }
+  }, [setTodos])
+
   return (
   <div className="container">
     <div className="inner">
