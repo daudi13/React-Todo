@@ -14,19 +14,19 @@ class TodoContainer extends React.Component {
       {
         id: 2,
         title: "Develop website and Add content",
-        completed: false
+        completed: true
       },
       {
         id: 3,
         title: "Deploy to live server",
-        completed: false
+        completed: true
       },
     ]
   }
 
   handleChange = (id) => {
     this.setState(prevState => ({
-      todo: this.state.todos.map(todo => {
+      todos: this.state.todos.map(todo => {
         if (todo.id === id) {
           return {
             ...todo,
